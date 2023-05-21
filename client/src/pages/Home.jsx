@@ -160,7 +160,7 @@ const Home = () => {
             </p>
             <div className="embed-responsive aspect-w-69 aspect-h-9">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1861.7027032546039!2d83.97944538755519!3d28.255075784305486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995947e93943543%3A0x400cf272840e539b!2sanesha%20hotel!5e0!3m2!1sen!2snp!4v1684560069656!5m2!1sen!2snp"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d697.352357795697!2d83.97631215132135!3d28.2548009114699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995947dd802d223%3A0xcc6f32e6a0be8042!2sCIT%20Center%20and%20Electronics%20%26%20Computer%20Department!5e0!3m2!1sen!2snp!4v1684641759848!5m2!1sen!2snp"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
