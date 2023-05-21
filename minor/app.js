@@ -1,0 +1,29 @@
+const express = require('express')
+const app = express()
+var cors = require('cors')
+require('dotenv').config()
+const morgan = require('morgan')
+const db = require('./Database/connection')
+const bodyparser = require("body-parser")
+const cookieParser = require('cookie-parser')
+const expressValidator= require('express-validator')
+app.use(bodyparser.json())
+app.use(cors({
+    origin: process.env.FRONT_END_URL,
+    methods: "GET, POST, PUT, DELETE",
+    credentials: true,
+  }));
+app.use(morgan('dev'))
+app.use(expressValidator()) // yesma kina vanda import garirakhnu pardyena tei vayera
+app.use(cookieParser())
+const Userroute = require('./Route/userrouter')
+const Propertyroute = require('./Route/propertyrouter')
+const appointmentRoute = require("./Route/appointmentRouter");
+app.use("/api",Userroute);
+app.use('/api/property',Propertyroute);
+app.use("/api/", appointmentRoute);
+const port = process.env.PORT
+ // kun route call garyeko tha hunxa 
+app.listen(port,(req,res)=>{
+    console.log("the server is connected")
+})
