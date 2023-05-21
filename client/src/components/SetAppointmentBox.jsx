@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -41,7 +41,15 @@ const SetAppointmentBox = ({ appointment }) => {
       window.location.reload();
     }
   };
-  if (appointment === undefined) return <div></div>;
+
+  const [boxVisible, setBoxVisible] = useState(true);
+
+  const handleCancelAppointment = () => {
+    setBoxVisible(false);
+  };
+
+  if (!boxVisible || appointment === undefined) return null;
+
   return (
     <div className="w-96 rounded-md ring-1 ring-gray-400 dark:text-gray-100 mx-auto mt-4 p-4 bg-white shadow-md">
       <div className="flex items-center">
@@ -118,6 +126,13 @@ const SetAppointmentBox = ({ appointment }) => {
                 />
               </div>
               <div className="flex justify-end mt-4">
+                <button
+                  type="button"
+                  className="px-2 py-2 bg-red-500 text-white rounded mr-8"
+                  onClick={handleCancelAppointment}
+                >
+                  Cancel Appointment
+                </button>
                 <button
                   type="submit"
                   className="px-4 py-2 bg-green-500 text-white rounded"
